@@ -5,11 +5,14 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 
 
 function Pokemons() {
-    const [offset, setOffset] = useState(1020)
+    const [offset, setOffset] = useState(0)
     const [loading, setLoading] = useState(false)
+   
     const POKEMON_DATA_SUFFIX = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=`
     const POKEMON_DATA_API = `https://pokeapi.co/api/v2/pokemon/`
     
+
+
     
     const [pokemonUrl, setPokemonURl] = useState([
 
@@ -26,6 +29,7 @@ function Pokemons() {
     ]
     )
   
+
 useEffect(
     () => {
         setLoading(true)
@@ -94,10 +98,59 @@ useEffect(
             
         
     function SearchBar() {
+        const POKEMON_DATA_SUFFIX_SEARCH = `https://pokeapi.co/api/v2/pokemon?limit=10000000`
+
+        const[pokemonSearch, setPokemonSearch] = useState(
+            [
+                {
     
+                }
+            ]
+        )
+        const[filtereData, setFilteredData] = useState([])
+
+        const handleFilter = (event) => {
+            const searchWord = event.target.value;
+            const newFilter = pokemonSearch.filter((value) =>{
+                return value.name.toLowerCase().includes(searchWord.toLowerCase());
+            })
+
+            if(searchWord == "") {
+                setFilteredData([])
+            }
+            else
+            {
+                setFilteredData(newFilter);
+            }
+        }
+
+        useEffect(
+            () => {
+               
+                fetch(POKEMON_DATA_SUFFIX_SEARCH)
+                .then(res => res.json())
+                .then(data => {setPokemonSearch(data.results)})
+           
+             
+        
+             
+                },[pokemonSearch])
         return(
-            
-            <input type="text" placeholder="Search a Pokemon"></input>
+            <div>
+                
+                <div>
+            <input type="text" id="searchbar" placeholder="Search a Pokemon" onChange={handleFilter}></input>
+                </div>
+                {filtereData.length != 0 && (
+                 <div className="dataResult">
+                    
+                    {filtereData.map((pokemonSearched) =>{
+                       return <div>{pokemonSearched.name} </div>
+                    })}
+                
+                </div>
+    )}
+            </div>
             
         )
         }
