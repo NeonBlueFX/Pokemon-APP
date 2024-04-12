@@ -82,7 +82,7 @@ justify-self: center;
     position: absolute;
     margin-left: 5px;
     padding-left: 10px;
-    padding-top: 5px;
+    padding-top: 10px;
     width: 300px;
     height: 200px;
     background-color: white;
@@ -90,6 +90,8 @@ justify-self: center;
     overflow-y: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 18px;
+    word-spacing: 10px;
+
 }
 .dataResult::-webkit-scrollbar
 {

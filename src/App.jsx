@@ -72,6 +72,7 @@ useEffect(
                    return(
                    <PokemonCard
                    image={pokemonData.sprites.front_default}
+                   image2={pokemonData.sprites.front_shiny}
                    name={pokemonData.name}
                    weight={pokemonData.weight}
                    key={pokemonData.id}
@@ -134,7 +135,7 @@ useEffect(
              
         
              
-                },[pokemonSearch])
+                },[])
         return(
             <div>
                 
@@ -145,7 +146,7 @@ useEffect(
                  <div className="dataResult">
                     
                     {filtereData.map((pokemonSearched) =>{
-                       return <div>{pokemonSearched.name} </div>
+                       return <div className="dataItem"><p>{pokemonSearched.name}</p> </div>
                     })}
                 
                 </div>
@@ -163,9 +164,8 @@ useEffect(
            
             return(
                 <div id="Compartment">
-                <h1>Pokemon</h1>
-                <img id="PokeIMG" src={props.image}></img>
-                <h2>Name:{props.name}</h2>
+                <h2 align="center">{props.name.toUpperCase()}</h2>
+                <img id="PokeIMG" src={props.image} onMouseOver={e => (e.currentTarget.src =props.image2)} onMouseLeave={e => (e.currentTarget.src =props.image )}></img>      
                 <h2>Weight:{props.weight}</h2>
                 <h2>ID: {props.id}</h2>
                 {/* <h3>Weight:{pokemon.weight}</h3>
