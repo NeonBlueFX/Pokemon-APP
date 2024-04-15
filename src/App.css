@@ -1,0 +1,99 @@
+main
+{
+    
+    display: flex;
+    flex-direction: column;
+    margin-top: 30vh;
+    margin-left: 32vh;
+    
+    width: 140vh;
+    gap: 5rem;
+    height: auto;
+
+    align-items: center;    
+  
+
+    
+}
+#Compartment
+{
+    display: flex;
+    flex-direction: column;
+    border: solid black 2px;
+    border-radius: 10%;
+    background-color: #efefef;
+    width: 250px;
+    height: auto;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+    justify-content: space-between;
+    
+ 
+}
+#Mapper
+{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    /* height: 500px;
+    overflow: auto; */
+    gap: 2rem;
+    width: 150vh;
+    
+    
+}
+h1
+{
+    align-self: center;
+}
+body
+{
+    background-color: lightgray;
+}
+#logo
+{
+    width: 500px;
+    height: auto;
+}
+.infninite-scroll-component
+{
+    width: auto;
+}
+#loadingButton
+{
+width: 100px;
+height: 50px;
+justify-self: center;
+}
+#searchbar
+{
+    width:500px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.dataResult
+{
+    position: absolute;
+    margin-left: 5px;
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    overflow: hidden;
+    overflow-y: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    word-spacing: 10px;
+
+}
+.dataResult::-webkit-scrollbar
+{
+    display: none;
+}
