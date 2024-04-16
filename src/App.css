@@ -15,13 +15,14 @@ main
 
     
 }
+
 #Compartment
 {
     display: flex;
     flex-direction: column;
     border: solid black 2px;
     border-radius: 10%;
-    background-color: #efefef;
+    background-color: transparent;
     width: 250px;
     height: auto;
     padding-left: 10px;
@@ -31,6 +32,7 @@ main
     
  
 }
+
 #Mapper
 {
 
@@ -46,29 +48,30 @@ main
     
     
 }
+
 h1
 {
     align-self: center;
 }
+
 body
 {
-    background-color: lightgray;
-}
+    background: rgb(170,165,244);
+background: linear-gradient(90deg, rgba(170,165,244,1) 16%, rgba(137,85,210,1) 48%, rgba(169,133,221,1) 69%, rgba(146,183,255,1) 100%, rgba(171,171,171,1) 100%);}
 #logo
 {
+    margin-top: -150px;
     width: 500px;
     height: auto;
 }
-.infninite-scroll-component
-{
-    width: auto;
-}
+
 #loadingButton
 {
 width: 100px;
 height: 50px;
 justify-self: center;
 }
+
 #searchbar
 {
     width:500px;
@@ -77,12 +80,13 @@ justify-self: center;
     border-radius: 10px;
     padding-left: 10px;
 }
+
 .dataResult
 {
     position: absolute;
     margin-left: 5px;
     padding-left: 10px;
-    padding-top: 10px;
+    padding-top: 0px;
     width: 300px;
     height: 200px;
     background-color: white;
@@ -90,10 +94,131 @@ justify-self: center;
     overflow-y: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 18px;
-    word-spacing: 10px;
+   
 
 }
+
 .dataResult::-webkit-scrollbar
 {
     display: none;
+}
+
+.dataResult .dataItem {
+    width: 100%;
+    height: 20%;
+    display: flex;
+
+    
+}
+
+a
+{
+    padding-top: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: inherit;
+    text-decoration: none;
+    font-weight:bold;
+}
+
+#InfoPage
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-color: transparent   ;
+    width: 500px;
+    height: 800px;
+    align-content: center;
+    
+}
+
+#InfoPage p
+{
+font-family: 'Times New Roman', Times, serif    ;
+align-self: center;
+}
+#InfoPage audio
+{
+padding-top: 30px;
+}
+
+#InfoPage h1 
+{
+    top: -40px;
+}
+
+.Front
+{
+    align-self: center;
+    width: 200px;
+}
+
+#MaskforCompartment
+{
+    z-index: -1;
+    display: flex;
+    position: absolute;
+    background-color: #d2d7f4;
+    width: 260px;
+    margin-left: -10px;
+    border-radius: inherit;
+    height: 300px;
+    
+}
+
+#Mask2forCompartment
+{
+    z-index: -2;
+    display: flex;
+    position: absolute;
+    background-color: #c9cdf7;
+    width: 260px;
+    margin-left: -10px;
+    border-radius: inherit;
+    height: 430px;
+}
+
+.dataResult .dataItem :hover
+{
+color: darkgrey;
+}
+
+#MaskforInfoPage
+{
+    z-index: -1;
+    display: flex;
+    position: absolute;
+    background-color: #d2d7f4;
+    width: 500px;
+    margin-top: 5px;
+    margin-left: -10px;
+    border-radius: inherit;
+    height: 280px;
+    
+}
+
+#MaskforInfoPage2
+{
+    border: solid black 3px;
+    z-index: -2;
+    display: flex;
+    position: absolute;
+    background-color: #c9cdf7;
+    width: inherit;
+    margin-left: -10px;
+    border-radius: inherit;
+    height: inherit;
+}
+#LoadingImg
+{
+    width: 100px;
+    animation: SpinAnimationForLoading 1s infinite;
+}
+
+@keyframes SpinAnimationForLoading {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+    
 }
