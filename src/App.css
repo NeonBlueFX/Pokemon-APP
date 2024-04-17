@@ -77,11 +77,15 @@ justify-self: center;
     border-radius: 10px;
     padding-left: 10px;
 }
-
+#searchbar:focus
+{
+   outline: none;
+}
 .dataResult
 {
     position: absolute;
-    margin-left: 5px;
+    margin-left: 8px;
+    margin-top: -57px;
     padding-left: 10px;
     padding-top: 0px;
     width: 300px;
