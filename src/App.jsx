@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import "./App.css"
 import {useParams,Link, BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./HomePage";
+import Error from "./Error";
 
 
 function Pokemons() {
@@ -37,7 +39,7 @@ useEffect(
         .then(res => res.json())
         .then(data => {setPokemon(data.results)})
         .finally(() => setTimeout(() => setLoading(false),2000))
-        console.log(offset)
+        
 
      
         },[offset])
@@ -63,7 +65,7 @@ useEffect(
             <>
           
             
-        
+          <SearchBar/>
             <div id="Mapper">
                 {
                 
@@ -156,14 +158,29 @@ useEffect(
                      filtereData.filter("")
 
                 };
-        
+        function PageValidation(valid)
+        {
+            
+            let validation = filtereData.filter(pokemon => pokemon.name ==valid )
+            let validation2 = validation.reduce((accumulator, currentValue) => currentValue.name, "")
+
+            if(validation2 != valid )
+            {
+                return "error";
+            }
+            else
+            {
+                return valid;
+            }
+        }
+       
              
         return(
             <div>
                 
                 <div>
             <input  type="text" value={pokemonSearchValue}id="searchbar" placeholder="Search a Pokemon" onChange={handleFilter}></input>
-            <Link onClick={() => setPokemonSearchValue("")} to={`/pokemon/${pokemonSearchValue}`}><input type="submit"></input></Link>
+            <Link onClick={() => setPokemonSearchValue("")} to={`/pokemon/${PageValidation(pokemonSearchValue.toLowerCase())}`}><input id="SearchSubmitButton" type="submit"></input></Link>
                 </div>
                 {filtereData.length != 0 && (
                  <div className="dataResult">
@@ -247,7 +264,7 @@ useEffect(
         .then(res => res.json())
         .then(data => {setPokemon(data.results)})
         .finally(() => setTimeout(() => setLoading(false),1000))
-        console.log(offset)
+        
 
      
         },[offset])
@@ -269,7 +286,7 @@ useEffect(
 
        pokemonUrl.sort(function(a,b){return a.id-b.id});
       let pokemonDetail = pokemonUrl.find(({name}) => name == poke ) 
-      console.log(pokemonDetail)
+     
     
 
 
@@ -311,7 +328,7 @@ function Header()
     return(
         <div className="HeaderComponent">
         <Link to="/"><p>Home</p></Link>
-        <Link to="/"><p>Pokemons</p></Link>
+        <Link to="/pokemon"><p>Pokemons</p></Link>
         <img id="logo" src="/src/Pokemon-LOGO.png"></img>
         </div>
     )
@@ -331,13 +348,14 @@ export function PokemonApp()
         <Header/>
         </header>
    
-        <SearchBar/>
+        
       
-      
+        
      
         <Routes>
-        <Route path="/" element={<Pokemons/>}></Route>
+        <Route path="/" element={<Home/>}></Route>
         <Route path="/pokemon" element={<Pokemons/>}></Route>
+        <Route path="/pokemon/error" element={<Error/>}></Route>
         <Route path="/pokemon/:poke" element={<PokemonInfoPage/>}></Route>
         </Routes>
      </BrowserRouter>
