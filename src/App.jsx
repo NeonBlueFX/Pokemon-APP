@@ -91,7 +91,7 @@ useEffect(
            
             </div>
             <div>
-            {loading && <img id="LoadingImg" src="./src/Pokeball.png"></img>}
+            {loading && <img id="LoadingImg" src="/src/Pokeball.png"></img>}
             {!loading && <button id="loadingButton" onClick={() => setOffset(offset+20) (sessionStorage.setItem("pokemonUrl", offset))}>Mas Pokemon</button>}
      
             </div>
@@ -192,10 +192,10 @@ useEffect(
                 <Route exact path="/" element={        <div id="Compartment">
                     <div id="MaskforCompartment"></div>
                     <div id="Mask2forCompartment"></div>
-                <Link key={props.id} to={`/pokemon/${props.name}`} align="center">{props.name.toUpperCase()}</Link>
+                  <h1 align="center">{props.name.toUpperCase()}</h1>
                 <img id="PokeIMG" src={props.image} onMouseOver={e => (e.currentTarget.src =props.image2)} onMouseLeave={e => (e.currentTarget.src =props.image )}></img>      
-                <h2>Weight:{props.weight}</h2>
-                <h2>ID: {props.id}</h2>
+                <Link key={props.id} to={`/pokemon/${props.name}`} align="center"><h2>Details</h2></Link>
+                
                 {/* <h3>Weight:{pokemon.weight}</h3>
                 <p>Type 1:{(pokemon.types[0].slot)}</p> */}
                    
@@ -295,9 +295,25 @@ useEffect(
         <p>SP ATK:{pokemonDetail?.stats[3].base_stat}</p>
         <p>SP DEF:{pokemonDetail?.stats[4].base_stat}</p>
         <p>SPEED:{pokemonDetail?.stats[5].base_stat}</p>
+        <br></br>
 
+        <h3 align="center">Cry</h3>
         <audio controls align="center" src={pokemonDetail?.cries.latest}></audio>
+        <br></br>
+
+       <Link to="/pokemon"><h3>Go back</h3></Link>
     </div>
+    )
+}
+
+function Header() 
+{
+    return(
+        <div className="HeaderComponent">
+        <Link to="/"><p>Home</p></Link>
+        <Link to="/"><p>Pokemons</p></Link>
+        <img id="logo" src="/src/Pokemon-LOGO.png"></img>
+        </div>
     )
 }
     
@@ -308,8 +324,12 @@ export function PokemonApp()
 
     
         <main>
-        <img id="logo" src="./src/Pokemon-LOGO.png"></img>
+      
+      
         <BrowserRouter>
+        <header>
+        <Header/>
+        </header>
    
         <SearchBar/>
       

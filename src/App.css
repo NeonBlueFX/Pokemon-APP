@@ -4,7 +4,7 @@ main
     display: flex;
     flex-direction: column;
     margin-top: 30vh;
-    margin-left: 32vh;
+    margin-left: 39vh;
     
     width: 140vh;
     gap: 5rem;
@@ -58,12 +58,9 @@ body
 {
     background: rgb(170,165,244);
 background: linear-gradient(90deg, rgba(170,165,244,1) 16%, rgba(137,85,210,1) 48%, rgba(169,133,221,1) 69%, rgba(146,183,255,1) 100%, rgba(171,171,171,1) 100%);}
-#logo
-{
-    margin-top: -150px;
-    width: 500px;
-    height: auto;
-}
+
+
+
 
 #loadingButton
 {
@@ -129,7 +126,7 @@ a
     border-radius: 20px;
     background-color: transparent   ;
     width: 500px;
-    height: 800px;
+    height: 1050px;
     align-content: center;
     
 }
@@ -177,7 +174,7 @@ padding-top: 30px;
     width: 260px;
     margin-left: -10px;
     border-radius: inherit;
-    height: 430px;
+    height: 438px;
 }
 
 .dataResult .dataItem :hover
@@ -221,4 +218,30 @@ color: darkgrey;
     from{transform: rotate(0deg);}
     to{transform: rotate(360deg);}
     
+}
+.HeaderComponent
+{
+    background: rgb(148,172,232);
+    background: linear-gradient(90deg, rgba(148,172,232,1) 6%, rgba(144,185,218,1) 21%, rgba(133,221,199,1) 50%, rgba(146,183,255,1) 100%, rgba(171,171,171,1) 100%);
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    padding-left: 10px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    width: 99.85%;
+    height: 100px;
+   border: black solid 1px;
+
+ 
+    
+}
+.HeaderComponent #logo
+{
+    right: 45%;
+    position: absolute;
+    width: 200px;
+    height: auto;
 }
