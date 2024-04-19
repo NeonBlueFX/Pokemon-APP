@@ -1,0 +1,4 @@
+style={{animation: home.pathname === "/" ? "slide 1s forwards" : "none", width: home.pathname === "/" ? "0%" : "100%"}}
+
+
+style={{animation: home.pathname === "/" ? "Appear 1s 1s forwards" : "none", opacity: home.pathname === "/" ? "0" : "1"}}

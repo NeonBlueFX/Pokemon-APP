@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./App.css"
+import "../styles/App.css"
 function ErrorPage(){
 
     return(
@@ -8,7 +8,7 @@ function ErrorPage(){
             <Link to="/pokemon"><h2>Go back</h2></Link>
             <h1>Error</h1>
             <h2>Pokemon not Found</h2>
-            <img width={200} src="/src/error-icon-4.png"></img>
+            <img width={200} src="/src/assets/error-icon-4.png"></img>
         </div>
     )
 
