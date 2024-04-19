@@ -35,7 +35,7 @@ function PokemonInfoPage(props) {
         () => {
             setLoading(true)
             // fetch(POKEMON_DATA_SUFFIX_ALLPOKEMONS + offset)
-            fetch(POKEMON_DATA_API + poke)
+            fetch(POKEMON_DATA_API + "/" + poke)
                 .then(res => res.json())
                 .then(data => { setPokemon(data) })
                 .finally(() => setTimeout(() => setLoading(false), 1000))
