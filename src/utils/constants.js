@@ -5,3 +5,5 @@ export const POKEMON_DATA_SUFFIX_LIMIT4 = `https://pokeapi.co/api/v2/pokemon?lim
 export const POKEMON_DATA_SUFFIX_ALLPOKEMONS = `https://pokeapi.co/api/v2/pokemon?limit=100000&offset=`
 export const POKEMON_DATA_API = `https://pokeapi.co/api/v2/pokemon`
 export const POKEMON_DATA_SUFFIX_SEARCH = `https://pokeapi.co/api/v2/pokemon?limit=10000000`
+export const POKEMON_DATA_TYPE = `https://pokeapi.co/api/v2/type
+`

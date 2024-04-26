@@ -5,7 +5,7 @@ export function PokemonApp() {
     return (
 
 
-        <main>
+        <main className="flex flex-col">
 
         <AppRouter/>
         

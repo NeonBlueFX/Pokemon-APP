@@ -4,7 +4,7 @@ import "../styles/App.css"
 function ErrorPage(){
 
     return(
-        <div id="ErrorDiv">
+        <div id="ErrorDiv" className=" flex flex-col text-white items-center w-full h-full bg-gradient-to-r from-red-800 to-cyan-700 p-20 gap-4 text-xl rounded-lg">
             <Link to="/pokemon"><h2>Go back</h2></Link>
             <h1>Error</h1>
             <h2>Pokemon not Found</h2>

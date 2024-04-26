@@ -6,8 +6,11 @@ import Home from "../pages/HomePage";
 import Error from "./Error";
 
 
+
 function AppRouter()
 {
+
+
     return(
         <BrowserRouter>
         <header id="header">

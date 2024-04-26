@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 main
 {
     
@@ -9,13 +12,13 @@ main
     width: 140vh;
     gap: 5rem;
     height: auto;
-
+    
     align-items: center;    
   
 
     
 }
-
+/* 
 #Compartment
 {
     display: flex;
@@ -43,7 +46,7 @@ main
     align-self: center;
     /* height: 500px;
     overflow: auto; */
-    gap: 2rem;
+    /* gap: 2rem;
     width: 150vh;
     
     
@@ -52,16 +55,13 @@ main
 h1
 {
     align-self: center;
-}
-
-body
-{
-    background: rgb(170,165,244);
-background: linear-gradient(90deg, rgba(170,165,244,1) 16%, rgba(137,85,210,1) 48%, rgba(169,133,221,1) 69%, rgba(146,183,255,1) 100%, rgba(171,171,171,1) 100%);}
+} */
 
 
 
 
+
+/* 
 #loadingButton
 {
 width: 100px;
@@ -97,9 +97,9 @@ justify-self: center;
     font-size: 18px;
    
 
-}
+} */ */
 
-.dataResult::-webkit-scrollbar
+/* .dataResult::-webkit-scrollbar
 {
     display: none;
 }
@@ -280,8 +280,8 @@ color: darkgrey;
     width: 200px;
     height: auto;
     opacity: 1 ;
-    
-}
+     */
+/* }
 #SearchSubmitButton
 {
     position: relative;
@@ -334,4 +334,5 @@ html
     from{opacity: 0;}
     to{opacity: 1;}
     
-}
+} */
+{}
